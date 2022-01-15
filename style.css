@@ -124,3 +124,20 @@ body {
     padding: 0 30px;
 }
 
+/* Quiz Box Title Styling */
+.quizBox header .quizBoxTitle {
+    font-size: 20px;
+}
+
+
+/* Quiz Box Title and Timer Styling */
+.quizBox header .quizBoxTitle,
+.quizBox header .quizBoxTimer {
+    background: darkseagreen;
+    border: 1px solid grey;
+    border-radius: 5px;
+    color: white;
+    font-weight: 500;
+    padding: 10px;
+    user-select: none;
+}
