@@ -18,7 +18,7 @@ body {
                 0px 6px 12px 0px #5d5b5b;
 }
 
-/*Changed the opacity so the start button will show and the display box will show when the button is pr
+/*Changed the opacity so the start button will show and the display box will show when the button is pr*/
 .displayBox.activeDisplayBox{
     opacity: 1;
     pointer-events: auto;
@@ -42,7 +42,7 @@ body {
     background: whitesmoke;
     border-radius: 5px;
     color: #797777;
-    /*opacity: 0;*/
+    opacity: 0;
     pointer-events: none;
     width: 55%;
 }
@@ -86,4 +86,19 @@ body {
     justify-content: flex-end;
     padding: 0 50px;
     font-size: 30px;
+}
+/* Color of button text and background*/
+.displayBox .displayBoxButtons button {
+    border-color: darkslategray;
+    border-radius : 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    height: 30px;
+    margin: 0 5px;
+    transition: all 0.3s ease;
+    min-width: 100px;
+    padding: 0px 5px;
+    background-color: darkseagreen;
 }
