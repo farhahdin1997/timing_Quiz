@@ -103,15 +103,15 @@ body {
     background-color: darkseagreen;
 }
 
-/* Quiz Box Styling -Container of the whole section */
-
+/* Quiz Box Styling */
 .quizBox {
     background: whitesmoke;
     border-radius: 5px;
     color: #797777;
     /*opacity: 0;*/
     pointer-events: none;
-    width: 65%;}
+    width: 65%;
+}
 
 /* Quiz Box Header Styling */
 .quizBox header {
@@ -129,7 +129,6 @@ body {
     font-size: 20px;
 }
 
-
 /* Quiz Box Title and Timer Styling */
 .quizBox header .quizBoxTitle,
 .quizBox header .quizBoxTimer {
@@ -140,4 +139,53 @@ body {
     font-weight: 500;
     padding: 10px;
     user-select: none;
+}
+
+/* Quiz Box Timer Styling */
+.quizBox header .quizBoxTimer {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 130px;
+}
+
+.quizBox header .quizBoxTimer .timerSeconds {
+    background: #2e2c2c;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+/* Quiz Box Section Styling */
+.quizBox section {
+    padding: 25px 30px;
+}
+
+/* Quiz Box Section Question Styling */
+.quizBox section .question {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* Quiz Box Section Answers Styling */
+.quizBox section .answerList {
+    display: block;
+    padding: 20px 0px;
+}
+
+.quizBox section .answerList .answer {
+    align-items: center;
+    background: #d2d2d2;
+    border: 1px solid #797777;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    margin-bottom: 7.5px;
+    justify-content: space-between;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+section .answerList .answer:hover {
+    background: #797777;
+    color: #ffdab9;
 }
