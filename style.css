@@ -15,7 +15,7 @@ body {
     top: 50%;
     transform: translate( -50%, -50% );
     box-shadow: 0px 4px 8px 0px #797777,
-                0px 6px 12px 0px #5d5b5b;
+                0px 6px 12px 0px #301414;
 }
 
 /*Changed the opacity so the start button will show and the display box will show when the button is pr*/
@@ -102,3 +102,14 @@ body {
     padding: 0px 5px;
     background-color: darkseagreen;
 }
+
+/* Quiz Box Styling */
+.quizBox {
+    background: whitesmoke;
+    border-radius: 5px;
+    color: #797777;
+    /*opacity: 0;*/
+    pointer-events: none;
+    width: 65%;
+}
+
