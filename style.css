@@ -46,3 +46,16 @@ body {
     pointer-events: none;
     width: 55%;
 }
+
+/* Display Box Title Styling */
+.displayBox .displayBoxTitle
+{
+    align-items: center;
+    border-bottom: 1px solid #797777;
+    display: flex;
+    font-size: 30px;
+    font-weight: 500px;
+    height: 60px;
+    padding: 0 35px;
+    width: 100%;
+}
