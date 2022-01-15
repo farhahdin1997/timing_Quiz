@@ -18,7 +18,7 @@ body {
                 0px 6px 12px 0px #5d5b5b;
 }
 
-/*Changed the opacity so the start button will show and the display box will show when the button is pressed*/
+/*Changed the opacity so the start button will show and the display box will show when the button is pr
 .displayBox.activeDisplayBox{
     opacity: 1;
     pointer-events: auto;
@@ -35,4 +35,14 @@ body {
     font-weight: 500;
     outline:none;
     padding: 15px 30px;
+}
+
+/* Display Box Styling */
+.displayBox {
+    background: whitesmoke;
+    border-radius: 5px;
+    color: #797777;
+    /*opacity: 0;*/
+    pointer-events: none;
+    width: 55%;
 }
