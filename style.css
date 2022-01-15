@@ -19,7 +19,9 @@ li {
 /* Score Results Positioning */
 .startButton,
 .displayBox,
-.quizBox {
+.quizBox,
+.scoreResults,
+.highscore {
     left: 50%;
     position: absolute;
     top: 50%;
@@ -29,22 +31,25 @@ li {
 }
 
 .displayBox.activeDisplayBox,
-.quizBox.activeQuizBox {
+.quizBox.activeQuizBox,
+.scoreResults.activeResults,
+.highscore.activeHighScore {
     opacity: 1;
     pointer-events: auto;
 }
 
 /* Start Quiz Button Styling */
 .startButton button{
-    background:darkseagreen;;
-    border-color: darkslategray;;
-    border:white;
+    background: grey;
+    border-color: black;
+    border-radius: 5px;
+    color:white;
     cursor: pointer;
     font-size: 30px;
     font-weight: 500;
     outline:none;
     padding: 15px 30px;
-    color: white;
+    border-width: 5px;
 }
 
 /* Display Box Styling */
@@ -58,7 +63,8 @@ li {
 }
 
 /* Display Box Title Styling */
-.displayBox .displayBoxTitle{
+.displayBox .displayBoxTitle,
+.highscore .title {
     align-items: center;
     border-bottom: 1px solid #797777;
     display: flex;
@@ -96,11 +102,20 @@ li {
     padding: 0 50px;
 }
 
+.highscore .scoreResultButtons {
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #797777;
+    padding: 10px;
+}
 /* Display Box Buttons Styling */
 /* Initials Submit Button Styling */
-.displayBox .displayBoxButtons button {
-    border-color: darkslategray;
-    border-radius : 5px;
+.displayBox .displayBoxButtons button,
+.scoreResults .scoreResultButtons button,
+.scoreResults button,
+.highscore button {
+    border-color:black;
+        border-radius : 5px;
     color:white;
     cursor: pointer;
     font-size: 15px;
@@ -115,31 +130,37 @@ li {
 /* Customizing start button */
 /* Customizing display buttons */
 /* Customizing score result buttons */
-.displayBoxButtons button.continue {
-    color:white;
-    background: darkseagreen;
+.displayBoxButtons button.continue,
+.scoreResults .scoreResultButtons button,
+.scoreResults button,
+.highscore button {
+    color: white;
+    background: grey; 
 }
 
 .startButton button:hover,
-.displayBoxButtons button.continue:hover {
-    background: lightslategray;
+.displayBoxButtons button.continue:hover,
+.scoreResults .scoreResultButtons button:hover,
+.scoreResults button:hover,
+.highscore button:hover {
+    background: #797777;
 }
 
 .displayBoxButtons button.quit {
     color:white;
-    background:  green;
+    background:  grey;
 }
 
 .displayBoxButtons button.quit:hover {
     color: white;
-    background: green;
+    background : #797777;
 }
 
 /* Quiz Box Styling */
 .quizBox {
     background: whitesmoke;
     border-radius: 5px;
-    color: white;
+    color: #797777;
     opacity: 0;
     pointer-events: none;
     width: 65%;
@@ -164,10 +185,10 @@ li {
 /* Quiz Box Title and Timer Styling */
 .quizBox header .quizBoxTitle,
 .quizBox header .quizBoxTimer {
-    background: darkseagreen;
-    border: 1px solid #5d5b5b;
+    background:grey;
+    border: 1px solid black; 
     border-radius: 5px;
-    color: white;;
+    color: white;
     font-weight: 500;
     padding: 10px;
     user-select: none;
@@ -182,7 +203,7 @@ li {
 }
 
 .quizBox header .quizBoxTimer .timerSeconds {
-    background: #2e2c2c;
+    background:black ;
     border-radius: 5px;
     padding: 3px;
 }
@@ -196,13 +217,12 @@ li {
 .quizBox section .question {
     font-size: 20px;
     font-weight: 600;
-    color: dimgray;
 }
 
 /* Quiz Box Section Answers Styling */
 .quizBox section .answerList {
     display: block;
-    padding: 20px 0px;   
+    padding: 20px 0px;
 }
 
 .quizBox section .answerList .answer {
@@ -216,9 +236,12 @@ li {
     justify-content: space-between;
     padding: 10px;
     transition: all 0.3s ease;
-    color: dimgray;
 }
 
+section .answerList .answer:hover {
+    background: #797777;
+    color: white;
+}
 
 /* Quiz Box Footer Styling */
 .quizBox footer {
@@ -231,9 +254,91 @@ li {
 }
 
 .quizBox footer .questionProgressBar {
-    background: darkseagreen;
+    background:grey;
     border-radius: 5px;
-    color: white;
+    color:white;
     padding: 10px;
     user-select: none;
+}
+
+/* Score Results Styling */
+.scoreResults {
+    align-items: center;
+    background: whitesmoke;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px;
+    width: 60%;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.scoreResults .trophy {
+    color: black;
+    font-size: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.scoreResults .finishText {
+    color: #797777;
+    display: flex;
+    font-size: 20px;
+    font-weight: 500;
+    justify-content: center;
+    padding: 5px;
+}
+
+.scoreResults .resultText {
+    color: #797777;
+    font-size: 15px;
+    font-weight: 400;
+    padding: 5px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.scoreResults form {
+    border-top: 1px solid #797777;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+#inputInitials {
+    margin: 10px auto;
+    padding: 5px 0px;
+    text-align: center;
+}
+
+.hide {
+    display: none;
+}
+
+.highscore {
+    background: whitesmoke;
+    border-radius: 5px;
+    color: #797777;
+    width: 55%;
+    opacity: 0;
+    pointer-events: none;
+    min-width: 500px;
+}
+
+.inputContent {
+    margin: 0px auto;
+    color: #797777;
+    width: '100%';
+    padding: 0px 0px 10px;
+}
+.users {
+    padding: 15px 40px;
+}
+
+.user {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0px;
 }

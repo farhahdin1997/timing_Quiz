@@ -3,14 +3,15 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="style.css">
 
         
         <title>Code Quiz</title>
     </head>
 
-  <!-- added a button so when users open the page this will show and allow users to start the quiz-->  <!-- Start Quiz Button -->
- <div class="startButton"><button>Start Quiz</button></div>
+ < <!-- added a button so when users open the page this will show and allow users to start the quiz-->  <!-- Start Quiz Button -->
+<div class="startButton"><button>Start Quiz</button></div>
   <!-- Rule section - Once the user clicks the start button this page will display with rules and a button to allow the users to start the quiz-->
   
   <!-- Start Quiz Button -->
@@ -20,13 +21,13 @@
           <span>Rules:</span>
       </div>
       <div class="rulesList">
-          <div class="rules">1. The quiz is timed and will take 1 minute </div>
-          <div class="rules">2. You will receive a point for each correctly answered question.</div>
-          <div class="rules">3. 5 seconds will be deducted from the timer for each wrongly answered question</div>
-          <div class="rules">4. Your score will be displayed once the quiz is completed or the timer approaches zero, and you will be given the option to submit your highscore.</div>
+        <div class="rules">1. You have 60 seconds to complete this quiz.</div>
+        <div class="rules">2. You will receive a point for each correctly answered question.</div>
+        <div class="rules">3. The timer will be deducted 5 seconds for each wrongly answered question.</div>
+        <div class="rules">4. Your score will be displayed once the quiz is completed or the timer approaches zero, and you will be given the option to submit your highscore. </div>
       </div>
       <div class="displayBoxButtons">
-  
+         <button class="quit">Exit Quiz</button>
           <button class="continue">Continue Quiz</button>
       </div>
   </div>
@@ -54,6 +55,49 @@
     </footer>
 </div>
 
+  <!-- Score Results -->
+  <div class="scoreResults">
+    <div class="completeQuiz">
+        <div class="trophy">
+            <i class="fa fa-trophy" aria-hidden="true"></i>
+        </div>
+        <div class="finishText">You finished the quiz!</div>
+        
+        <div class="resultText">
+            <p>You got <span class="answersCorrect">0</span> out of <span class="questionNumberTotal">10</span>
+                questions correct!</p>
+            
+        </div>
+    
+    </div>
+    <!-- form goes here to enter intials-->
+    
+            <span class="inputContent">
+                <input type="text" id="inputInitials" name="initials" placeholder="Enter Initials" autocomplete="off">
+            </span>
+            <div class="scoreResultButtons">
+                <button class="submitButton">Submit</button>
+                <button class="viewHighscore hide">View HighScore</button>
+                <button class="quit">Play Again</button>
+            </div>
+        </form> 
+
+</div>
+
+<div class="highscore">
+    <div class="title">
+        <span>HighScores</span>
+    </div>
+    <ul class="users">
+    </ul>
+    <form>
+        <div class="scoreResultButtons">
+            <button class="backButton">Back</button>
+            <button class="deleteScores">Delete Highscores</button>
+            <button class="quit">Play Again</button>
+        </div>
+    </form>
+</div>
   
   <body>
     <script src="script.js"></script>

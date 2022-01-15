@@ -34,9 +34,9 @@ startButton.onclick = function () {
 
 // Exit Quiz Button Click Functionality
 // hides "Display Box"
-/*quitButton.onclick = function () {
+quitButton.onclick = function () {
     displayBox.classList.remove("activeDisplayBox");
-}*/
+}
 
 //when the user clicks an answer it 
 answerList.addEventListener('click', (event) => {
@@ -62,7 +62,7 @@ continueButton.addEventListener('click', (event) => {
     finishText.innerHTML = 'You finished the quiz!'
 })
 
-/*submitButton.addEventListener('click', (event) => {
+submitButton.addEventListener('click', (event) => {
     event.preventDefault();
 
     if (userInitialsInput.value && userInitialsInput.value !== '') {
@@ -76,45 +76,7 @@ continueButton.addEventListener('click', (event) => {
         userInitialsInput.remove();
         inputContent.innerHTML = 'Registered User Successfully!'
     }
-})*/
-
-/*viewHighscore.addEventListener('click', (event) => {
-    event.preventDefault();
-    result.classList.remove('activeResults');
-    highscore.classList.add('activeHighScore');
-    const users = JSON.parse(localStorage.getItem('users'))
-    if (users) {
-        const getAllUsers = users.sort((a, b) => b.num - a.num).map((element, index) => {
-            return (
-                `<li class="user">
-                    <span>${index + 1}. ${element.name}</span>
-                    <span>${element.num}</span>
-                </li>`
-            )
-        })
-        usersList.innerHTML = getAllUsers.join(' ')
-    } else {
-        usersList.innerHTML = `<li>No HighScore</li>`
-    }
-})*/
-/*
-deleteScores.addEventListener('click', (event) => {
-    event.preventDefault();
-    usersList.innerHTML = '';
-    localStorage.removeItem('users')
-    const newli = document.createElement('li')
-    newli.innerHTML = `No HighScores`
-    usersList.appendChild(newli);
-    deleteScores.remove()
-    backButton.remove()
-})*/
-
-/*backButton.addEventListener('click', (event) => {
-    event.preventDefault();
-    result.classList.add("activeResults")
-    highscore.classList.remove("activeHighScore")
 })
-*/
 
 // grabbing questions and answers from 'questions' array
 function displayQuestions(index) {
@@ -145,12 +107,12 @@ function answerSelected(answer) {
 }
 
 // hides display box, quizbox, and shows results
-/*function showScoreResults() {
+function showScoreResults() {
     displayBox.classList.remove("activeDisplayBox")
     quizBox.classList.remove("activeQuizBox")
     result.classList.add("activeResults")
     userScore.innerHTML = gameSetting.score;
-}*/
+}
 
 // create functionality to timer
 function startTimer(resetTimer) {
@@ -172,6 +134,7 @@ function startTimer(resetTimer) {
     }
 }
 
+
 let defaultInterval = () => setInterval(() => {
     const activeResultsPage = document.querySelector('.activeResults')
     const activeHighScorePage = document.querySelector('.activeHighScore')
@@ -186,9 +149,6 @@ let defaultInterval = () => setInterval(() => {
     }
 }, 1000);
 defaultInterval()
-
-
-
 
 // Questions and Answers
 var questions = [
