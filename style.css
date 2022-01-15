@@ -1,3 +1,4 @@
+
 * {
     box-sizing: border-box;
     font-family: 'Cabin', sans-serif;
@@ -9,27 +10,35 @@ body {
     background: #d2d2d2;
 }
 
-.startButton, .displayBox {
+li {
+    list-style: none;
+}
+
+/* Start Quiz Button Positioning */
+/* Display Box Positioning */
+/* Score Results Positioning */
+.startButton,
+.displayBox,
+.quizBox {
     left: 50%;
     position: absolute;
     top: 50%;
     transform: translate( -50%, -50% );
     box-shadow: 0px 4px 8px 0px #797777,
-                0px 6px 12px 0px #301414;
+                0px 6px 12px 0px #5d5b5b;
 }
 
-/*Changed the opacity so the start button will show and the display box will show when the button is pr*/
-.displayBox.activeDisplayBox{
+.displayBox.activeDisplayBox,
+.quizBox.activeQuizBox {
     opacity: 1;
     pointer-events: auto;
 }
 
 /* Start Quiz Button Styling */
 .startButton button{
-    background: darkseagreen;
-    border-color: darkslategray;
-    border-radius: 5px;
-    color:white ;
+    background:darkseagreen;;
+    border-color: darkslategray;;
+    border:white;
     cursor: pointer;
     font-size: 30px;
     font-weight: 500;
@@ -48,8 +57,7 @@ body {
 }
 
 /* Display Box Title Styling */
-.displayBox .displayBoxTitle
-{
+.displayBox .displayBoxTitle{
     align-items: center;
     border-bottom: 1px solid #797777;
     display: flex;
@@ -59,7 +67,8 @@ body {
     padding: 0 35px;
     width: 100%;
 }
-/* Rule list style*/
+
+/* Rules List Styling */
 .displayBox .rulesList {
     padding: 15px 40px;
 }
@@ -76,22 +85,22 @@ body {
     font-weight: 500;
 }
 
-
 /* Display Box Buttons Styling */
-.displayBox .displayBoxButtons{
+.displayBox .displayBoxButtons {
     align-items: center;
     border-top: 1px solid #797777;
     display: flex;
     height: 50px;
     justify-content: flex-end;
     padding: 0 50px;
-    font-size: 30px;
 }
-/* Color of button text and background*/
+
+/* Display Box Buttons Styling */
+/* Initials Submit Button Styling */
 .displayBox .displayBoxButtons button {
     border-color: darkslategray;
     border-radius : 5px;
-    color: white;
+    color:white;
     cursor: pointer;
     font-size: 15px;
     font-weight: 500;
@@ -100,15 +109,37 @@ body {
     transition: all 0.3s ease;
     min-width: 100px;
     padding: 0px 5px;
-    background-color: darkseagreen;
+}
+
+/* Customizing start button */
+/* Customizing display buttons */
+/* Customizing score result buttons */
+.displayBoxButtons button.continue {
+    color:white;
+    background: darkseagreen;
+}
+
+.startButton button:hover,
+.displayBoxButtons button.continue:hover {
+    background: lightslategray;
+}
+
+.displayBoxButtons button.quit {
+    color:white;
+    background:  green;
+}
+
+.displayBoxButtons button.quit:hover {
+    color: white;
+    background: green;
 }
 
 /* Quiz Box Styling */
 .quizBox {
     background: whitesmoke;
     border-radius: 5px;
-    color: #797777;
-    /*opacity: 0;*/
+    color: white;
+    opacity: 0;
     pointer-events: none;
     width: 65%;
 }
@@ -133,9 +164,9 @@ body {
 .quizBox header .quizBoxTitle,
 .quizBox header .quizBoxTimer {
     background: darkseagreen;
-    border: 1px solid grey;
+    border: 1px solid #5d5b5b;
     border-radius: 5px;
-    color: white;
+    color: white;;
     font-weight: 500;
     padding: 10px;
     user-select: none;
@@ -185,10 +216,6 @@ body {
     transition: all 0.3s ease;
 }
 
-section .answerList .answer:hover {
-    background: #797777;
-    color: #ffdab9;
-}
 
 /* Quiz Box Footer Styling */
 .quizBox footer {
@@ -203,7 +230,7 @@ section .answerList .answer:hover {
 .quizBox footer .questionProgressBar {
     background: darkseagreen;
     border-radius: 5px;
-    color:white;
+    color: white;
     padding: 10px;
     user-select: none;
 }
