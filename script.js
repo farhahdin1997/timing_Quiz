@@ -62,62 +62,9 @@ continueButton.addEventListener('click', (event) => {
     finishText.innerHTML = 'You finished the quiz!'
 })
 
-/*submitButton.addEventListener('click', (event) => {
-    event.preventDefault();
-
-    if (userInitialsInput.value && userInitialsInput.value !== '') {
-        const users = JSON.parse(localStorage.getItem('users'))
-        localStorage.setItem('users', JSON.stringify([{
-            name: userInitialsInput.value,
-            num: userScore.innerHTML
-        }, ...(users || [])]));
-        viewHighscore.classList.remove('hide');
-        submitButton.classList.add('hide');
-        userInitialsInput.remove();
-        inputContent.innerHTML = 'Registered User Successfully!'
-    }
-})*/
-
-/*viewHighscore.addEventListener('click', (event) => {
-    event.preventDefault();
-    result.classList.remove('activeResults');
-    highscore.classList.add('activeHighScore');
-    const users = JSON.parse(localStorage.getItem('users'))
-    if (users) {
-        const getAllUsers = users.sort((a, b) => b.num - a.num).map((element, index) => {
-            return (
-                `<li class="user">
-                    <span>${index + 1}. ${element.name}</span>
-                    <span>${element.num}</span>
-                </li>`
-            )
-        })
-        usersList.innerHTML = getAllUsers.join(' ')
-    } else {
-        usersList.innerHTML = `<li>No HighScore</li>`
-    }
-})*/
-/*
-deleteScores.addEventListener('click', (event) => {
-    event.preventDefault();
-    usersList.innerHTML = '';
-    localStorage.removeItem('users')
-    const newli = document.createElement('li')
-    newli.innerHTML = `No HighScores`
-    usersList.appendChild(newli);
-    deleteScores.remove()
-    backButton.remove()
-})*/
-
-/*backButton.addEventListener('click', (event) => {
-    event.preventDefault();
-    result.classList.add("activeResults")
-    highscore.classList.remove("activeHighScore")
-})
-*/
 
 // grabbing questions and answers from 'questions' array
-/*function displayQuestions(index) {
+function displayQuestions(index) {
     var questionText = document.querySelector(".question");
     var questionElement = '<span>' + questions[index].numberQuestion + ". " + questions[index].question + '</span>';
     var answerElement = `<div class="answer">${questions[index].answer[0]}<span></span></div>
@@ -133,27 +80,11 @@ deleteScores.addEventListener('click', (event) => {
     }
 }
 
-// comparing user selected answer to correct answer
-/*function answerSelected(answer) {
-    var userResponse = answer.textContent;
-    var correctResponse = questions[questionCounter].correctAnswer;
-    if (userResponse == correctResponse) {
-        gameSetting.score++;
-    } else {
-        gameSetting.timeTotal -= 5;
-    }
-}*/
 
-// hides display box, quizbox, and shows results
-/*function showScoreResults() {
-    displayBox.classList.remove("activeDisplayBox")
-    quizBox.classList.remove("activeQuizBox")
-    result.classList.add("activeResults")
-    userScore.innerHTML = gameSetting.score;
-}*/
+
 
 // create functionality to timer
-/*function startTimer(resetTimer) {
+function startTimer(resetTimer) {
     counter = setInterval(timer, 1000)
     function timer() {
         if (resetTimer) {
@@ -185,7 +116,7 @@ let defaultInterval = () => setInterval(() => {
         finishText.innerHTML = 'You ran out of time!'
         clearInterval(defaultInterval);
     }
-}, 1000);*/
+}, 1000)
 
 // Questions and Answers
 var questions = [
@@ -280,7 +211,7 @@ var questions = [
     {
         numberQuestion: 9,
         question: "Choose the correct HTML element to define emphasized text",
-        correctAnswer: "<em>",
+        correctAnswer: "<em>", 
         answer: [
             "<em>",
             "<p>",

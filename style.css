@@ -195,12 +195,14 @@ li {
 .quizBox section .question {
     font-size: 20px;
     font-weight: 600;
+    color: dimgray;
 }
 
 /* Quiz Box Section Answers Styling */
 .quizBox section .answerList {
     display: block;
     padding: 20px 0px;
+   
 }
 
 .quizBox section .answerList .answer {
@@ -214,6 +216,7 @@ li {
     justify-content: space-between;
     padding: 10px;
     transition: all 0.3s ease;
+    color: dimgray;
 }
 
 
