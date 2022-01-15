@@ -38,32 +38,7 @@ startButton.onclick = function () {
     displayBox.classList.remove("activeDisplayBox");
 }*/
 
-//when the user clicks an answer
-/*answerList.addEventListener('click', (event) => {
-    if (event.target.matches('.answer')) {
-        if (questionCounter < questions.length - 1) {
-            questionCounter++;
-            currentQuestionCounter.innerHTML = questionCounter + 1;
-            displayQuestions(questionCounter);
-        } else {
-            showScoreResults();
-        }
-    }
-})
-*/
-// Continue Button Click Functionality
-//displays "Quiz Box"
-continueButton.addEventListener('click', (event) => {
-    event.preventDefault();
-    displayBox.classList.remove("activeDisplayBox");
-    quizBox.classList.add("activeQuizBox");
-    startTimer();
-    displayQuestions(0);
-    finishText.innerHTML = 'You finished the quiz!'
-})
-
-// it will allow the users to go through the questions and when the user selects a right answer the score will go up
-//when the user clicks an answer the next question appears
+//when the user clicks an answer it 
 answerList.addEventListener('click', (event) => {
     if (event.target.matches('.answer')) {
         if (questionCounter < questions.length - 1) {
@@ -75,6 +50,72 @@ answerList.addEventListener('click', (event) => {
         }
     }
 })
+
+// Continue Button Click Functionality
+//displays "Quiz Box"
+continueButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    displayBox.classList.remove("activeDisplayBox");
+    quizBox.classList.add("activeQuizBox");
+    startTimer();
+    displayQuestions(0);
+    finishText.innerHTML = 'You finished the quiz!'
+})
+
+/*submitButton.addEventListener('click', (event) => {
+    event.preventDefault();
+
+    if (userInitialsInput.value && userInitialsInput.value !== '') {
+        const users = JSON.parse(localStorage.getItem('users'))
+        localStorage.setItem('users', JSON.stringify([{
+            name: userInitialsInput.value,
+            num: userScore.innerHTML
+        }, ...(users || [])]));
+        viewHighscore.classList.remove('hide');
+        submitButton.classList.add('hide');
+        userInitialsInput.remove();
+        inputContent.innerHTML = 'Registered User Successfully!'
+    }
+})*/
+
+/*viewHighscore.addEventListener('click', (event) => {
+    event.preventDefault();
+    result.classList.remove('activeResults');
+    highscore.classList.add('activeHighScore');
+    const users = JSON.parse(localStorage.getItem('users'))
+    if (users) {
+        const getAllUsers = users.sort((a, b) => b.num - a.num).map((element, index) => {
+            return (
+                `<li class="user">
+                    <span>${index + 1}. ${element.name}</span>
+                    <span>${element.num}</span>
+                </li>`
+            )
+        })
+        usersList.innerHTML = getAllUsers.join(' ')
+    } else {
+        usersList.innerHTML = `<li>No HighScore</li>`
+    }
+})*/
+/*
+deleteScores.addEventListener('click', (event) => {
+    event.preventDefault();
+    usersList.innerHTML = '';
+    localStorage.removeItem('users')
+    const newli = document.createElement('li')
+    newli.innerHTML = `No HighScores`
+    usersList.appendChild(newli);
+    deleteScores.remove()
+    backButton.remove()
+})*/
+
+/*backButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    result.classList.add("activeResults")
+    highscore.classList.remove("activeHighScore")
+})
+*/
+
 // grabbing questions and answers from 'questions' array
 function displayQuestions(index) {
     var questionText = document.querySelector(".question");
@@ -91,6 +132,25 @@ function displayQuestions(index) {
         allAnswers[i].setAttribute('onclick', 'answerSelected(this)');
     }
 }
+
+// comparing user selected answer to correct answer
+function answerSelected(answer) {
+    var userResponse = answer.textContent;
+    var correctResponse = questions[questionCounter].correctAnswer;
+    if (userResponse == correctResponse) {
+        gameSetting.score++;
+    } else {
+        gameSetting.timeTotal -= 5;
+    }
+}
+
+// hides display box, quizbox, and shows results
+/*function showScoreResults() {
+    displayBox.classList.remove("activeDisplayBox")
+    quizBox.classList.remove("activeQuizBox")
+    result.classList.add("activeResults")
+    userScore.innerHTML = gameSetting.score;
+}*/
 
 // create functionality to timer
 function startTimer(resetTimer) {
@@ -112,7 +172,6 @@ function startTimer(resetTimer) {
     }
 }
 
-
 let defaultInterval = () => setInterval(() => {
     const activeResultsPage = document.querySelector('.activeResults')
     const activeHighScorePage = document.querySelector('.activeHighScore')
@@ -125,118 +184,124 @@ let defaultInterval = () => setInterval(() => {
         finishText.innerHTML = 'You ran out of time!'
         clearInterval(defaultInterval);
     }
-}, 1000)
+}, 1000);
+defaultInterval()
+
+
+
 
 // Questions and Answers
 var questions = [
     {
         numberQuestion: 1,
-        question: "Which of the following is a correct html semantic element",
-        correctAnswer: "Section",
+        question: "Inside which HTML element do we put the Javascript?",
+        correctAnswer: "script",
         answer: [
-            "Home",
-            "Section",
-            "ElementId",
+            "script",
+            "javascript",
+            "scripting",
             "js"
         ]
     },
+    
     {
         numberQuestion: 2,
-        question: "Which of the following <h> tags is the biggest font size",
-        correctAnswer: "<h1>'",
+        question: "What is the correct syntax for referring to an external script called xxx.js?",
+        correctAnswer: "script src='xxx.js'",
         answer: [
-            "<h1>",
-            "<h2>",
-            "<h3>",
-            "<h4>"
+            "script src='xxx.js'",
+            "script href='xxx.js'",
+            "script name='xxx.js'",
+            "script img='xxx.js'"
         ]
     },
+    
     {
         numberQuestion: 3,
-        question: "What are void elements in HTML",
-        correctAnswer: "<br/>",
+        question: "How do you write 'Hello World' in an alert box?",
+        correctAnswer: "alert('Hello World');",
         answer: [
-            "<br/>",
-            "<p>>",
-            "<h1>",
-            "<section>"
+            "alertBox('Hello World');",
+            "alert('Hello World');",
+            "msg('Hello World');",
+            "msgBox('Hello World');"
         ]
     },
     {
         numberQuestion: 4,
-        question: "Which is the correct image tag",
-        correctAnswer: "<img src>",
+        question: "How do you call a function named 'myFunction'?",
+        correctAnswer: "myFunction()",
         answer: [
-            "<image src>",
-            "<img src>",
-            "myImage =",
+            "call function myFunction()",
+            "call myFunction()",
+            "myFunction()",
             "console.log(myFunction())"
         ]
     },
     {
         numberQuestion: 5,
-        question: "Which of the following is a formatting tag",
-        correctAnswer: "<strong>",
+        question: "What is the correct syntax for writing an 'IF' statement?",
+        correctAnswer: "if (i == 5)",
         answer: [
-            "<br>",
-            "<p>",
-            "<html>",
-            "<strong>"
+            "if i == 5 then",
+            "if i == 5",
+            "if i = 5 then",
+            "if (i == 5)"
         ]
     },
     {
         numberQuestion: 6,
-        question: "What does HTML stand for?",
-        correctAnswer: "Hyper Text Markup Language",
+        question: "Where is the best practice for placing your JS script?",
+        correctAnswer: "At the end of the body",
         answer: [
-            "Hyper Text Makeup Languaged",
-            "Hyper Text Markup Language",
-            "Hi Text Markup Language",
-            "Hit Text Markup Language"
+            "At the beginning of the head",
+            "At the beginning of the body",
+            "At the end of the body",
+            "At the end of the head"
         ]
     },
     {
         numberQuestion: 7,
-        question: "< br  / > What type of tag is this?",
-        correctAnswer: "Break Tag",
+        question: "Which event occurs when the user clicks on an HTML element?",
+        correctAnswer: "onclick",
         answer: [
-            "Break Tag",
-            "Broken one",
-            "Opening Tag",
-            "Closing Tag"
+            "onchange",
+            "onmouseover",
+            "onmouseclick",
+            "onclick"
         ]
     },
     {
         numberQuestion: 8,
-        question: "Text written inside the following pair of tags is considered as paragraph.",
-        correctAnswer: "<p> </p>",
+        question: "Which operator is used to assign a value to a variable?",
+        correctAnswer: "=",
         answer: [
-            "<p> </p>",
-            "<paragraph> </paragrapgh>",
-            "<par> </par>",
-            "None of the above"
+            "*",
+            "-",
+            "+",
+            "="
         ]
     },
     {
         numberQuestion: 9,
-        question: "Choose the correct HTML element to define emphasized text",
-        correctAnswer: "<em>", 
+        question: "How do you write the beginning of a 'FOR' loop?",
+        correctAnswer: "for(i = 0; i <= 5; i ++)",
         answer: [
-            "<em>",
-            "<p>",
-            "<b>",
-            "<br>"
+            "for i = 1 to 5",
+            "for(i = 0; i <= 5)",
+            "for(i = 0; i <= 5; i ++)",
+            "for(i <=5; i++)"
         ]
     },
     {
         numberQuestion: 10,
-        question: "Which character is used to indicate an end tag?",
-        correctAnswer: "/",
+        question: "Which of the following functions of an Array object removes the last element from an array and returns that element?",
+        correctAnswer: "pop()",
         answer: [
-            ">",
-            "*",
-            "/",
-            "$"
+            "push()",
+            "pop()",
+            "join()",
+            "map()"
         ]
     }
 ]
