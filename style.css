@@ -203,7 +203,7 @@ li {
 }
 
 .quizBox header .quizBoxTimer .timerSeconds {
-    background:black ;
+    background:#2D572E ;
     border-radius: 5px;
     padding: 3px;
 }

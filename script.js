@@ -1,7 +1,7 @@
 // Selecting Elements
 var startButton = document.querySelector(".startButton");
 var displayBox = document.querySelector(".displayBox");
-var quitButton = displayBox.querySelector(".quit");
+var playAgainButton = displayBox.querySelector(".quit");
 var continueButton = displayBox.querySelector(".continue");
 var quizBox = document.querySelector(".quizBox");
 var answerList = document.querySelector(".answerList");
@@ -26,19 +26,21 @@ var gameSetting = {
 }
 
 // Start Quiz Button Click Functionality
-// displays "Display Box"
-// starts timer
+// User clicks on the button
+// Rules section appears and button disappears
 startButton.onclick = function () {
     displayBox.classList.add("activeDisplayBox");
 }
 
 // Exit Quiz Button Click Functionality
-// hides "Display Box"
-quitButton.onclick = function () {
+// When user clicks on the butotn
+// It hides the "Display Box"
+playAgainButton.onclick = function () {
     displayBox.classList.remove("activeDisplayBox");
 }
 
-//when the user clicks an answer it 
+// When the user clicks an answer it
+// Takes the user to the score board
 answerList.addEventListener('click', (event) => {
     if (event.target.matches('.answer')) {
         if (questionCounter < questions.length - 1) {
@@ -52,7 +54,12 @@ answerList.addEventListener('click', (event) => {
 })
 
 // Continue Button Click Functionality
-//displays "Quiz Box"
+// When the user clicks on the button it display box is hidden
+// Then displays "Quiz Box" appears
+// The preventDefault() method of the Event interface tells the user agent that if the event does not get explicitly handled, 
+//its a default action should not be taken as it normally would be.
+// Calls timer and display questions functions and runs that function
+// Changes the content of HTML element and shows a message
 continueButton.addEventListener('click', (event) => {
     event.preventDefault();
     displayBox.classList.remove("activeDisplayBox");
@@ -62,6 +69,15 @@ continueButton.addEventListener('click', (event) => {
     finishText.innerHTML = 'You finished the quiz!'
 })
 
+// Submit button
+// When user clicks the button 
+// The preventDefault() method of the Event interface tells the user agent that if the event does not get explicitly handled, 
+// its a default action should not be taken as it normally would be.
+// Storing and retrieving data in local storage
+// view high score will disappear
+//submit button will appear
+// The input will disappear
+// Changes the content of HTML element and shows a message
 submitButton.addEventListener('click', (event) => {
     event.preventDefault();
 
@@ -78,6 +94,16 @@ submitButton.addEventListener('click', (event) => {
     }
 })
 
+//View the high scores
+// When user clicks on the button
+// The preventDefault() method of the Event interface tells the user agent that if the event does not get explicitly handled, 
+// its a default action should not be taken as it normally would be.
+// The users results will disappear
+// High score table will appear , it will show any previous and current score as long 
+// as they haven't been deleted as its saved in local storage
+// Retrieves the data from local storage
+// Joins the users scores in the high score board
+// If there is no high score a message will appear
 viewHighscore.addEventListener('click', (event) => {
     event.preventDefault();
     result.classList.remove('activeResults');
@@ -98,6 +124,15 @@ viewHighscore.addEventListener('click', (event) => {
     }
 })
 
+// Deletes the scores on high score board
+// When the button is clicked 
+// The preventDefault() method of the Event interface tells the user agent that if the event does not get explicitly handled, 
+// its a default action should not be taken as it normally would be.
+// Replacing the content in the div to empty string
+// Removed local storage
+// Creates a list using createElement 
+// AppendChild ()- Add a node to the end of the list of children of a specified parent node
+// Removes the delete score and back button
 deleteScores.addEventListener('click', (event) => {
     event.preventDefault();
     usersList.innerHTML = '';
@@ -109,14 +144,23 @@ deleteScores.addEventListener('click', (event) => {
     backButton.remove()
 })
 
+// Back button allows user to go the the previous event
+// When user clicks on the button
+// The preventDefault() method of the Event interface tells the user agent that if the event does not get explicitly handled, 
+// its a default action should not be taken as it normally would be.
+// The Element.classList is a read-only property that returns a live DOMTokenList collection of the class attributes of the element
+// The add() method of the DOMTokenList interface adds the given tokens to the list, omitting any that are already present.
+// High score will disappear and it will go to previous event
+
 backButton.addEventListener('click', (event) => {
     event.preventDefault();
     result.classList.add("activeResults")
     highscore.classList.remove("activeHighScore")
 })
 
-
-// grabbing questions and answers from 'questions' array
+// Displaying the questions with the answers
+// It grabs the questions and answers from 'questions' array
+// When all the questions have been answers it calls the AnswerSelected function
 function displayQuestions(index) {
     var questionText = document.querySelector(".question");
     var questionElement = '<span>' + questions[index].numberQuestion + ". " + questions[index].question + '</span>';
@@ -132,8 +176,9 @@ function displayQuestions(index) {
         allAnswers[i].setAttribute('onclick', 'answerSelected(this)');
     }
 }
-
-// comparing user selected answer to correct answer
+// This compares all the users selected answer to correct answer
+// All the correct answers it will add to the score
+// Else if the answer is incorrect it will deduct -5 from the timer
 function answerSelected(answer) {
     var userResponse = answer.textContent;
     var correctResponse = questions[questionCounter].correctAnswer;
@@ -144,7 +189,9 @@ function answerSelected(answer) {
     }
 }
 
-// hides display box, quizbox, and shows results
+// This function: hides display box, quizbox, and shows results
+// The Element.classList is a read-only property that returns a live DOMTokenList collection of the class attributes of the element
+// The add() method of the DOMTokenList interface adds the given tokens to the list, omitting any that are already present.
 function showScoreResults() {
     displayBox.classList.remove("activeDisplayBox")
     quizBox.classList.remove("activeQuizBox")
@@ -152,7 +199,12 @@ function showScoreResults() {
     userScore.innerHTML = gameSetting.score;
 }
 
-// create functionality to timer
+// Starts the timer
+// Setinterval () - The setInterval() method repeats a given function at every given time-interval.
+// The first parameter is the function to be executed.
+// The second parameter indicates the length of the time-interval between each execution.
+// If the timer is reset it will clear the timer
+// When the timer is <0 it clears the interval too
 function startTimer(resetTimer) {
     counter = setInterval(timer, 1000)
     function timer() {
@@ -172,21 +224,26 @@ function startTimer(resetTimer) {
     }
 }
 
-
+// Let default time and set time equals to or less than
 let defaultInterval = () => setInterval(() => {
     const activeResultsPage = document.querySelector('.activeResults')
     const activeHighScorePage = document.querySelector('.activeHighScore')
-    if (activeResultsPage || activeHighScorePage) {
+     // The results page or high score page else clear interval and set default time
+    if (activeResultsPage || activeHighScorePage) { 
         clearInterval(defaultInterval);
     } else if (timerCount.innerHTML === "00") {
+        // The Element.classList is a read-only property that returns a live DOMTokenList collection of the class attributes of the element
+        // The add() method of the DOMTokenList interface adds the given tokens to the list, omitting any that are already present.
         result.classList.add('activeResults');
+        // Quiz box disppears
         quizBox.classList.remove('activeQuizBox');
         userScore.innerHTML = gameSetting.score;
         finishText.innerHTML = 'You ran out of time!'
+        //Clears intervals and sets default time
         clearInterval(defaultInterval);
     }
 }, 1000);
-defaultInterval()
+defaultInterval() //default time shows
 
 // Questions and Answers
 var questions = [
