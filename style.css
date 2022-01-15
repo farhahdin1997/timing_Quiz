@@ -10,6 +10,7 @@ body {
     background: #d2d2d2;
 }
 
+/*List style none*/
 li {
     list-style: none;
 }
@@ -203,7 +204,7 @@ li {
 }
 
 .quizBox header .quizBoxTimer .timerSeconds {
-    background:#2D572E ;
+    background: black ;
     border-radius: 5px;
     padding: 3px;
 }
