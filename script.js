@@ -17,4 +17,10 @@ startButton.onclick = function () {
     displayBox.classList.add("activeDisplayBox");
 }
 
-//Timer 
+// create functionality to timer
+function startTimer(resetTimer) {
+    
+
+
+
+}
