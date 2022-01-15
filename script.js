@@ -62,7 +62,19 @@ continueButton.addEventListener('click', (event) => {
     finishText.innerHTML = 'You finished the quiz!'
 })
 
-
+// it will allow the users to go through the questions and when the user selects a right answer the score will go up
+//when the user clicks an answer the next question appears
+answerList.addEventListener('click', (event) => {
+    if (event.target.matches('.answer')) {
+        if (questionCounter < questions.length - 1) {
+            questionCounter++;
+            currentQuestionCounter.innerHTML = questionCounter + 1;
+            displayQuestions(questionCounter);
+        } else {
+            showScoreResults();
+        }
+    }
+})
 // grabbing questions and answers from 'questions' array
 function displayQuestions(index) {
     var questionText = document.querySelector(".question");
@@ -79,9 +91,6 @@ function displayQuestions(index) {
         allAnswers[i].setAttribute('onclick', 'answerSelected(this)');
     }
 }
-
-
-
 
 // create functionality to timer
 function startTimer(resetTimer) {

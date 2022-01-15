@@ -44,6 +44,7 @@ li {
     font-weight: 500;
     outline:none;
     padding: 15px 30px;
+    color: white;
 }
 
 /* Display Box Styling */
@@ -201,8 +202,7 @@ li {
 /* Quiz Box Section Answers Styling */
 .quizBox section .answerList {
     display: block;
-    padding: 20px 0px;
-   
+    padding: 20px 0px;   
 }
 
 .quizBox section .answerList .answer {
