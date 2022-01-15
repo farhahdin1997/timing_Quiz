@@ -98,6 +98,17 @@ viewHighscore.addEventListener('click', (event) => {
     }
 })
 
+deleteScores.addEventListener('click', (event) => {
+    event.preventDefault();
+    usersList.innerHTML = '';
+    localStorage.removeItem('users')
+    const newli = document.createElement('li')
+    newli.innerHTML = `No HighScores`
+    usersList.appendChild(newli);
+    deleteScores.remove()
+    backButton.remove()
+})
+
 
 // grabbing questions and answers from 'questions' array
 function displayQuestions(index) {
