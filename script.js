@@ -78,6 +78,27 @@ submitButton.addEventListener('click', (event) => {
     }
 })
 
+viewHighscore.addEventListener('click', (event) => {
+    event.preventDefault();
+    result.classList.remove('activeResults');
+    highscore.classList.add('activeHighScore');
+    const users = JSON.parse(localStorage.getItem('users'))
+    if (users) {
+        const getAllUsers = users.sort((a, b) => b.num - a.num).map((element, index) => {
+            return (
+                `<li class="user">
+                    <span>${index + 1}. ${element.name}</span>
+                    <span>${element.num}</span>
+                </li>`
+            )
+        })
+        usersList.innerHTML = getAllUsers.join(' ')
+    } else {
+        usersList.innerHTML = `<li>No HighScore</li>`
+    }
+})
+
+
 // grabbing questions and answers from 'questions' array
 function displayQuestions(index) {
     var questionText = document.querySelector(".question");
