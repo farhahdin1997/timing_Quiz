@@ -109,6 +109,12 @@ deleteScores.addEventListener('click', (event) => {
     backButton.remove()
 })
 
+backButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    result.classList.add("activeResults")
+    highscore.classList.remove("activeHighScore")
+})
+
 
 // grabbing questions and answers from 'questions' array
 function displayQuestions(index) {
