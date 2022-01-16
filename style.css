@@ -343,3 +343,66 @@ section .answerList .answer:hover {
     justify-content: space-between;
     margin: 5px 0px;
 }
+
+
+/* Responsive Design */
+@media screen and (max-width: 580px) {
+    .displayBox.activeDisplayBox,
+    .quizBox.activeQuizBox,
+    .scoreResults.activeResults,
+    .highscore.activeHighScore {
+        width: 90%;   
+    }
+    .quizBox header {
+        flex-direction: column;
+        height: 120px !important;
+        justify-content: space-around;
+    }
+
+    .quizBox header.quizBoxTitle,
+    .quizBox header.quizBoxTimer {
+        margin-top: 5px;
+    }
+
+    .displayBoxButtons {
+        padding: 10px 50px;
+        justify-content: center;
+        flex-direction: column-reverse;
+        height: 80px !important;
+    }
+
+    .displayBoxButtons button.continue,
+    .displayBoxButtons button.quit {
+        padding: 0px 2.5px;
+        margin-bottom: 5px;
+    }
+
+    .displayBoxButtons button.continue {
+        margin: 5px 0px;
+    }
+
+    .scoreResultButtons {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .scoreResultButtons button.quit,
+    .scoreResultButtons button.viewHighscore,
+    .scoreResultButtons button.backButton,
+    .scoreResultButtons button.submitButton,
+    .scoreResultButtons button.deleteScores {
+        margin: 2.5px;
+        padding: 2.5px;
+        height: auto;
+    }
+
+    .inputContent {
+        text-align: center;
+    }
+
+    .highscore {
+        min-width: 360px;
+    }
+    
+}
