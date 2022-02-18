@@ -1,9 +1,9 @@
 
 <h1> Web APIs: Code Quiz </h1> 
 
-  A timed quiz that allows the user to have 60 seconds to complete this quiz. The user will receive a point for each correctly answered question. However, the timer will be deducted 5 seconds for each wrongly answered question. But the score will be displayed once the quiz is completed or the timer approaches zero, and you will be given the option to submit your high score. 
+ A timed quiz that allows the user to have 60 seconds to complete this quiz. The user will receive a point for each correctly answered question. However, the timer will be deducted 5 seconds for each wrongly answered question. But the score will be displayed once the quiz is completed or the timer approaches zero, and you will be given the option to submit your high score. 
 
-##Acceptance Criteria
+## Acceptance Criteria
 ```
 GIVEN I am taking a code quiz
 WHEN I click the start button
@@ -18,6 +18,16 @@ WHEN the game is over
 THEN I can save my initials and my score
 ```
   
+## Technoligies Used
+```
+Local stoage
+HTML 5
+CSS
+Boostrap
+Java Script
+
+```
+
 Deployment Link -https://farhahdin1997.github.io/timing_Quiz/
  <br>
 Repository Link- https://github.com/farhahdin1997/timing_Quiz
@@ -63,3 +73,12 @@ Mobile view
 
 <img width="378" alt="mob5" src="https://user-images.githubusercontent.com/81389441/149667893-eacd89bb-fe7e-48fe-97c8-7add8c06849c.png">
 
+Copyright 2021 Farhah Din
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+Contact information for you and any collaborators-
