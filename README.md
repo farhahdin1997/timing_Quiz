@@ -1,5 +1,5 @@
 
-<h1> Web APIs: Code Quiz <h1> 
+<h1> Web APIs: Code Quiz </h1> 
 
   A timed quiz that allows the user to have 60 seconds to complete this quiz. The user will receive a point for each correctly answered question. However, the timer will be deducted 5 seconds for each wrongly answered question. But the score will be displayed once the quiz is completed or the timer approaches zero, and you will be given the option to submit your high score. 
 
