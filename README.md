@@ -32,7 +32,8 @@ Deployment Link -https://farhahdin1997.github.io/timing_Quiz/
  <br>
 Repository Link- https://github.com/farhahdin1997/timing_Quiz
 
-Screenshots Page 1
+## Screen Shots
+Page 1
 <br>
 
 <img width="565" alt="screenshot1" src="https://user-images.githubusercontent.com/81389441/149667813-a3d9c34b-f9da-4148-a78b-781220288a23.png">
