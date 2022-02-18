@@ -1,9 +1,10 @@
 
-Web APIs: Code Quiz
-A timed quiz that allows the user to have 60 seconds to complete this quiz. The user will receive a point for each correctly answered question. However, the timer will be deducted 5 seconds for each wrongly answered question. But the score will be displayed once the quiz is completed or the timer approaches zero, and you will be given the option to submit your high score. 
+<h1> Web APIs: Code Quiz <h1> 
 
-Acceptance Criteria
+  A timed quiz that allows the user to have 60 seconds to complete this quiz. The user will receive a point for each correctly answered question. However, the timer will be deducted 5 seconds for each wrongly answered question. But the score will be displayed once the quiz is completed or the timer approaches zero, and you will be given the option to submit your high score. 
 
+##Acceptance Criteria
+```
 GIVEN I am taking a code quiz
 WHEN I click the start button
 THEN a timer starts and I am presented with a question
@@ -15,9 +16,11 @@ WHEN all questions are answered or the timer reaches 0
 THEN the game is over
 WHEN the game is over
 THEN I can save my initials and my score
-
-Deployment -https://farhahdin1997.github.io/timing_Quiz/
-Repository- https://github.com/farhahdin1997/timing_Quiz
+```
+  
+Deployment Link -https://farhahdin1997.github.io/timing_Quiz/
+ <br>
+Repository Link- https://github.com/farhahdin1997/timing_Quiz
 
 Screenshots Page 1
 <br>
@@ -51,7 +54,6 @@ Mobile view
 <br>
 
 <img width="407" alt="mobilescreen1" src="https://user-images.githubusercontent.com/81389441/149667880-18e300e5-c498-40a5-8040-f882528c1735.png">
-
 
 <img width="394" alt="mobile 2" src="https://user-images.githubusercontent.com/81389441/149667882-a5f6f515-32d1-46bf-9d08-7ee13e0ea65a.png">
 
